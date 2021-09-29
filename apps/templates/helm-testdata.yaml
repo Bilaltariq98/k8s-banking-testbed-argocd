@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: "helm-testdata"
-  namespace: "develop"
+  namespace: {{ .Values.spec.environment }}
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -12,5 +12,5 @@ spec:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
   destination:
-    namespace: "develop"
+    namespace: "argocd"
     server: {{ .Values.spec.destination.server }}
