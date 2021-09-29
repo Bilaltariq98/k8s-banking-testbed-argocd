@@ -4,4 +4,3 @@ spec:
   source:
     repoURL: https://github.com/Bilaltariq98/k8s-banking-testbed-argocd
     targetRevision: HEAD
-  environment: dev
