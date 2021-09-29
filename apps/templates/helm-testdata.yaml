@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: "{{ .Values.spec.environment }}-helm-testdata"
+  namespace: {{ .Values.spec.environment }}
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    path: helm-testdata
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: {{ .Values.spec.source.targetRevision }}
+  destination:
+    namespace: helm-testdata
+    server: {{ .Values.spec.destination.server }}
+syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
