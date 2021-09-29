@@ -11,8 +11,8 @@ spec:
     replicas: {{ .Values.replicaCount }}
     selector:
       matchLabels:
-      app: {{ template "helm-testdata.name" . }}
-      release: {{ .Release.Name }}
+        app: {{ template "helm-testdata.name" . }}
+        release: {{ .Release.Name }}
     template:
       metadata:
         labels:
