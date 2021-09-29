@@ -12,5 +12,5 @@ spec:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
   destination:
-    namespace: "{{ .Values.spec.environment }}-testdata"
+    namespace: "argocd"
     server: {{ .Values.spec.destination.server }}
