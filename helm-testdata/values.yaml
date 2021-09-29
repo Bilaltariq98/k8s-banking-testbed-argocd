@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: docker.io/bilal690/dockerhub
-  tag: version1.1.develop
+  tag: 0.1.develop
   pullPolicy: IfNotPresent
 
 service:
