@@ -10,7 +10,14 @@ spec:
   source:
     path: helm-testdata
     repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+    targetRevision: {{ .Values.spec.environment }}
   destination:
-    namespace: {{ .Values.spec.source.namespace }}
+    namespace: {{ .Values.spec.environment }}
     server: {{ .Values.spec.destination.server }}
+syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:    
+    - Validate=false
+    - CreateNamespace=true
