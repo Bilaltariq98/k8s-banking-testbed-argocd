@@ -1,8 +1,0 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-spec:
-  project: default
-  source:
-    path: kustomize-testdata/test
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: develop
