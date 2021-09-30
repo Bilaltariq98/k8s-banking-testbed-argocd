@@ -1,5 +1,5 @@
 resources:
-- ./dev
+- ./develop
 - ./test
 
 namePrefix: cluster-a-
