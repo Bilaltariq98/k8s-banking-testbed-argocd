@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    path: kustomize-testdata
+    path: kustomize-testdata/develop
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: develop
   destination:
