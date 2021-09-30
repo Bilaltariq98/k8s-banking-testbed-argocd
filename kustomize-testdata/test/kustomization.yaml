@@ -1,0 +1,6 @@
+resources:
+- ./../base
+namePrefix: test-
+patches:
+- deployment.yaml
+namespace: test
