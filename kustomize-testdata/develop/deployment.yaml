@@ -6,4 +6,7 @@ spec:
   template:
     spec:
       containers:
-        - image: docker.io/bilal690/dockerhub:0.1.develop
+        - name: testdata
+          image: docker.io/bilal690/dockerhub:0.1.develop
+          ports:
+          - containerPort: 3000
