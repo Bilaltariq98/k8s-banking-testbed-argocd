@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: "dev-testdata"
+  namespace: argocd # Should match the namespace Argo CD is running on
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    path: kustomize-testdata\develop
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: develop
+  destination:
+    namespace: develop
+    server: {{ .Values.spec.destination.server }}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
