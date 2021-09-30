@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: "dev-testdata"
+  name: "testdata"
   namespace: argocd # Should match the namespace Argo CD is running on
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -9,11 +9,11 @@ spec:
   project: default
   source:
     path: kustomize-testdata\develop
-    repoURL: {{ .Values.spec.source.repoURL }}
+    repoURL: https://github.com/Bilaltariq98/k8s-banking-testbed-argocd.git
     targetRevision: develop
   destination:
     namespace: develop
-    server: {{ .Values.spec.destination.server }}
+    server: https://kubernetes.default.svc
   syncPolicy:
     automated:
       prune: true
