@@ -8,12 +8,12 @@ metadata:
 spec:
   project: default
   source:
-    path: kustomize-testdata\develop
-    repoURL: https://github.com/Bilaltariq98/k8s-banking-testbed-argocd.git
+    path: kustomize-testdata
+    repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: develop
   destination:
     namespace: develop
-    server: https://kubernetes.default.svc
+    server: {{ .Values.spec.destination.server }}
   syncPolicy:
     automated:
       prune: true

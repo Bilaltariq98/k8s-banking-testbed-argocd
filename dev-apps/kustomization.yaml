@@ -1,5 +1,0 @@
-resources:
-- ./templates
-- ./test
-
-namePrefix: app-
