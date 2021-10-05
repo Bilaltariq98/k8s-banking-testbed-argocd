@@ -4,13 +4,20 @@ metadata:
   name: istio-gateway 
   namespace: argocd
   finalizers:
-  - resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io
 spec:
+  project: default
+  source:
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: HEAD
+    path: testbed/istio/gateway
+
   destination:
     namespace: banking-gateway
     server: {{ .Values.spec.destination.server }}
-  project: default
-  source:
-    path: testbed/istio/gateway
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    validate: true
