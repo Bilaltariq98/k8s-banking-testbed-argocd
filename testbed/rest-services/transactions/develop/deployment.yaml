@@ -17,7 +17,7 @@ spec:
       spec:
         containers:
         - name: transactions
-          image: bilal690/banking-transactions:local
+          image: bilal690/banking-transactions:latest
           ports:
           - containerPort: 3000
           startupProbe:

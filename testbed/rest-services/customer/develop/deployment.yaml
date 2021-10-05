@@ -1,7 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
+metadata:
+  name: customer
+  labels:
+    app: customer
 spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: customer-pod
     template:
+      metadata:
+        labels:
+          app: customer-pod
+          project: banking
       spec:
         containers:
         - name: customer
