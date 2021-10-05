@@ -7,6 +7,6 @@ spec:
     spec:
       containers:
         - name: testdata
-          image: k3d-banking-registry/banking-testdata:local
+          image: bilal690/banking-testdata:latest
           ports:
           - containerPort: 3000

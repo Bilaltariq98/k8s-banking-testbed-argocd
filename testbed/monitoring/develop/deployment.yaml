@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: monitoring
+  namespace: operations
+  labels:
+    app: monitoring
+spec:
+    replicas: 2
+    selector:
+      matchLabels:
+        app: monitoring-pod
+    template:
+      metadata:
+        labels:
+          app: monitoring-pod
+          project: banking
+      spec:
+        serviceAccountName: monitoring-account
+        containers:
+        - name: monitoring
+          image: bilal690/banking-monitoring:latest
+          ports:
+          - containerPort: 3000

@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+spec:
+    template:
+      spec:
+        containers:
+        - name: customer
+          image: bilal690/banking-customer:latest
+          ports:
+          - containerPort: 3000
+          startupProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
+            failureThreshold: 5
+            periodSeconds: 3
