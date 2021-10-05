@@ -18,6 +18,6 @@ spec:
       spec:
         containers:
         - name: tests
-          image: k3d-banking-registry/banking-tests:local
+          image: k3d-banking-registry:5000/banking-tests:local
           ports:
           - containerPort: 3000
