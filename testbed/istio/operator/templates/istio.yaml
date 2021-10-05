@@ -7,11 +7,7 @@ spec:
   profile: default
   addonComponents:
     prometheus:
-      enabled: true
-    grafana:
-      enabled: true
-    kiali:
-      enabled: true
+      enabled: false
 #  This one below technically is useless:
 #  values:
 #    global:

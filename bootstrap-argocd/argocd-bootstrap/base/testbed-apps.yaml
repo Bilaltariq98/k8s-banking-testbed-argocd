@@ -8,7 +8,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Bilaltariq98/k8s-banking-testbed-argocd.git
-    targetRevision: HEAD
+    targetRevision: develop
     path:   testbed-apps
     helm:
       valueFiles:

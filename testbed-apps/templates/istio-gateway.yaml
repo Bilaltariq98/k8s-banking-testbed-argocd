@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: HEAD
+    targetRevision: develop
     path: testbed/istio/gateway
 
   destination:
