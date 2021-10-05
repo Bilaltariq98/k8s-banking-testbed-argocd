@@ -18,6 +18,6 @@ spec:
       spec:
         containers:
         - name: tests
-          image: localhost:46499//banking-tests:local
+          image: localhost:46499/banking-tests:local
           ports:
           - containerPort: 3000
