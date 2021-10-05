@@ -1,0 +1,4 @@
+resources:
+- ./develop
+
+namePrefix: cluster-a-

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tests-service
+  namespace: operations
+  labels:
+    app: tests
+spec:
+  ports:
+  - port: 80
+    targetPort: 3000
+    appProtocol: http
+  selector:
+    app: tests-pod
+  type: ClusterIP
