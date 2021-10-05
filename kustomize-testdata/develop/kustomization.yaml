@@ -1,6 +1,0 @@
-resources:
-- ./../base
-namePrefix: develop-
-patches:
-- deployment.yaml
-namespace: develop
