@@ -1,11 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
+metadata:
+  name: transactions
+  labels:
+    app: transactions
 spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: transactions-pod
     template:
+      metadata:
+        labels:
+          app: transactions-pod
+          project: banking
       spec:
         containers:
-        - name: customer
-          image: bilal690/banking-transactions:latest
+        - name: transactions
+          image: bilal690/banking-transactions:local
           ports:
           - containerPort: 3000
           startupProbe:
