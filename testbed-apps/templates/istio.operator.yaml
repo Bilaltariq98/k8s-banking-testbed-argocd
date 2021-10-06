@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/istio/istio.git
-    targetRevision: "1.11.3"
+    targetRevision: "1.6.0"
     path: manifests/charts/istio-operator
 
     helm:
@@ -19,7 +19,7 @@ spec:
         - name: "hub"
           value: "docker.io/istio"
         - name: "tag"
-          value: "1.11.3"
+          value: "1.6.0"
         - name: "operatorNamespace"
           value: "istio-operator"
         - name: "istioNamespace"
