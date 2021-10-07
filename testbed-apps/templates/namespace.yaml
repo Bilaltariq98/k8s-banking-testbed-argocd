@@ -10,6 +10,14 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
+  name: istio-operator
+  labels:
+    name: "istio-operator"
+    istio-injection: "enabled"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
   name: banking-gateway
   labels:
     name: "banking-gateway"
