@@ -2,7 +2,13 @@
 
 ## Running Bootstrapping ArgoCD & Istio
 
-To bootstrap the app on Argo CD run the following command (add relative path as neccesary). 
+1. Create A Cluster with traefik disabled use the config.yaml like below:
+
+'k3d cluster create --config ./bootstrap-argocd/cluster/config.yaml' 
+
+NOTE: a normal K3D cluster will not work as Istio Ingress LoadBalancer will never get assigned an IP Address. 
+
+2. To bootstrap the app on Argo CD run the following command (add relative path as neccesary). 
 
 'kubectl apply -k bootstrap-argocd/argocd-istio-bootstrap'
 
