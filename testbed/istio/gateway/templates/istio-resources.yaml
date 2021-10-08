@@ -28,7 +28,7 @@ spec:
         prefix: /accounts
     route:
     - destination:
-        host: develop-accounts-service
+        host: develop-accounts-service.develop.svc.cluster.local
         port:
           number: 80
   - match:
@@ -36,7 +36,7 @@ spec:
         prefix: /customers
     route:
     - destination:
-        host: develop-customer-service
+        host: develop-customer-service.develop.svc.cluster.local
         port:
           number: 80
   - match:
@@ -44,7 +44,7 @@ spec:
         prefix: /contacts
     route:
     - destination:
-        host: develop-contacts-service
+        host: develop-contacts-service.develop.svc.cluster.local
         port:
           number: 80
   - match:
@@ -52,7 +52,7 @@ spec:
         prefix: /transactions
     route:
     - destination:
-        host: develop-transactions-service
+        host: develop-transactions-service.develop.svc.cluster.local
         port:
           number: 80
   - match:
@@ -60,7 +60,7 @@ spec:
         prefix: /monitoring
     route:
     - destination:
-        host: develop-monitoring-service.operations.svc.cluster.local
+        host: develop-monitoring-service.develop.svc.cluster.local
         port:
           number: 80
   - match:
@@ -68,7 +68,7 @@ spec:
         prefix: /tests
     route:
     - destination:
-        host: develop-tests-service.operations.svc.cluster.local
+        host: develop-tests-service.develop.svc.cluster.local
         port:
           number: 80
   - match:
@@ -76,7 +76,7 @@ spec:
         prefix: /testdata
     route:
     - destination:
-        host: develop-testdata-service
+        host: develop-testdata-service.develop.svc.cluster.local
         port:
           number: 80
   # - match:
@@ -100,6 +100,6 @@ spec:
         prefix: /
     route:
     - destination:
-        host: develop-frontend-service
+        host: develop-frontend-service.develop.svc.cluster.local
         port:
           number: 80
