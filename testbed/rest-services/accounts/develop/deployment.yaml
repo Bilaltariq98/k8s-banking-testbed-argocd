@@ -17,7 +17,7 @@ spec:
       spec:
         containers:
         - name: accounts
-          image: bilal690/banking-accounts:0.2.develop
+          image: bilal690/banking-accounts:0.3.develop
           ports:
           - containerPort: 3000
           startupProbe:
@@ -28,8 +28,8 @@ spec:
             periodSeconds: 3
           env:
             - name: CUSTOMER_SERVICE_URL
-              value: http://localhost:8080/customers
+              value: http://develop-customer-service
             - name: TRANSACTIONS_SERVICE_URL
-              value: http://localhost:8080/transactions
+              value: http://develop-transactions-service
             - name: TESTDATA_SERVICE_URL
-              value: http://localhost:8080/testdata
+              value: http://develop-testdata-service
