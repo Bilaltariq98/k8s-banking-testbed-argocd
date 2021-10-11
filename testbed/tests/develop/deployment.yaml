@@ -18,6 +18,11 @@ spec:
       spec:
         containers:
         - name: tests
-          image: bilal690/banking-tests:0.1.develop
+          image: bilal690/banking-tests:0.2.develop
           ports:
           - containerPort: 3000
+          env:
+            - name: FRONTEND_SERVICE_DNS
+              value: develop-frontend-service.develop.svc.cluster.local
+            - name: APP_NAMESPACE
+              value: .develop.svc.cluster.local
