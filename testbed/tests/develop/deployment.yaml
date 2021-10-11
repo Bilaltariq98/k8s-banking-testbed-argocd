@@ -18,7 +18,7 @@ spec:
       spec:
         containers:
         - name: tests
-          image: bilal690/banking-tests:0.3.develop
+          image: bilal690/banking-tests:0.4.develop
           ports:
           - containerPort: 3000
           env:
