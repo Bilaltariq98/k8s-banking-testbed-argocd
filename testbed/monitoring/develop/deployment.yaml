@@ -24,4 +24,4 @@ spec:
           - containerPort: 3000
           env:
             - name: FRONTEND_SERVICE_DNS
-              value: develop-frontend-service.default.svc.cluster.local
+              value: develop-frontend-service.develop.svc.cluster.local
