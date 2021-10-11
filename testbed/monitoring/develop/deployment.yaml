@@ -19,9 +19,11 @@ spec:
         serviceAccountName: monitoring-account
         containers:
         - name: monitoring
-          image: bilal690/banking-monitoring:0.2.develop
+          image: bilal690/banking-monitoring:0.3.develop
           ports:
           - containerPort: 3000
           env:
             - name: FRONTEND_SERVICE_DNS
               value: develop-frontend-service.develop.svc.cluster.local
+            - name: APP_NAMESPACE
+              value: develop
