@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: contacts
+  labels:
+    app: contacts
+spec:
+    strategy:
+      blueGreen:
+        activeService: develop-contacts-service
+        previewService: develop-contacts-service-preview
+        autoPromotionEnabled: false
+    template:
+      spec:
+        containers:
+        - name: contacts
+          image: bilal690/banking-contacts:0.3.develop
+          ports:
+          - containerPort: 3000
+          startupProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
+            failureThreshold: 5
+            periodSeconds: 3
+          env:
+            - name: CUSTOMER_SERVICE_URL
+              value: http://develop-customer-service
+            - name: TESTDATA_SERVICE_URL
+              value: http://develop-testdata-service
