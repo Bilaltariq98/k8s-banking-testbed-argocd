@@ -1,19 +1,15 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: transactions
   labels:
     app: transactions
 spec:
-    replicas: 3
-    selector:
-      matchLabels:
-        app: transactions-pod
+    blueGreen:
+      activeService: develop-transactions-service
+      previewService: develop-transactions-service-preview
+      autoPromotionEnabled: false
     template:
-      metadata:
-        labels:
-          app: transactions-pod
-          project: banking
       spec:
         containers:
         - name: transactions

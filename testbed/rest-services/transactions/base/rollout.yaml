@@ -1,5 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: transactions
   labels:
@@ -9,6 +9,10 @@ spec:
     selector:
       matchLabels:
         app: transactions-pod
+    blueGreen:
+      activeService: transactions-service
+      previewService: transactions-service-preview
+      autoPromotionEnabled: false
     template:
       metadata:
         labels:
