@@ -9,6 +9,11 @@ spec:
     selector:
       matchLabels:
         app: customer-pod
+    strategy:
+      blueGreen:
+        activeService: customer-service
+        previewService: customer-service-preview
+        autoPromotionEnabled: false
     template:
       metadata:
         labels:
@@ -17,7 +22,7 @@ spec:
       spec:
         containers:
         - name: customer
-          image: bilal690/banking-customer:0.3.develop
+          image: k3d-banking-registry:5000/banking-customer:local
           ports:
           - containerPort: 3000
           startupProbe:
@@ -26,10 +31,3 @@ spec:
               port: 3000
             failureThreshold: 5
             periodSeconds: 3
-          env:
-            - name: ACCOUNTS_SERVICE_URL
-              value: http://develop-accounts-service
-            - name: CONTACTS_SERVICE_URL
-              value: http://develop-contacts-service
-            - name: TESTDATA_SERVICE_URL
-              value: http://develop-testdata-service
