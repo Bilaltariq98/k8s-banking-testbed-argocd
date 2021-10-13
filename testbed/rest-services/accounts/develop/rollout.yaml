@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: accounts
+  labels:
+    app: accounts
+spec:
+    strategy:
+      blueGreen:
+        activeService: develop-accounts-service
+        previewService: develop-accounts-service-preview
+        autoPromotionEnabled: false
+    template:
+      spec:
+        containers:
+        - name: accounts
+          image: bilal690/banking-accounts:0.3.develop
+          ports:
+          - containerPort: 3000
+          startupProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
+            failureThreshold: 5
+            periodSeconds: 3
+          env:
+            - name: CUSTOMER_SERVICE_URL
+              value: http://develop-customer-service
+            - name: TRANSACTIONS_SERVICE_URL
+              value: http://develop-transactions-service
+            - name: TESTDATA_SERVICE_URL
+              value: http://develop-testdata-service

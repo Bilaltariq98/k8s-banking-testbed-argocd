@@ -1,5 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: accounts
   labels:
@@ -9,6 +9,11 @@ spec:
     selector:
       matchLabels:
         app: accounts-pod
+    strategy:
+      blueGreen:
+        activeService: accounts-service
+        previewService: accounts-service-preview
+        autoPromotionEnabled: false
     template:
       metadata:
         labels:
@@ -17,7 +22,7 @@ spec:
       spec:
         containers:
         - name: accounts
-          image: bilal690/banking-accounts:0.3.develop
+          image: k3d-banking-registry:5000/banking-accounts:local
           ports:
           - containerPort: 3000
           startupProbe:
@@ -26,10 +31,3 @@ spec:
               port: 3000
             failureThreshold: 5
             periodSeconds: 3
-          env:
-            - name: CUSTOMER_SERVICE_URL
-              value: http://develop-customer-service
-            - name: TRANSACTIONS_SERVICE_URL
-              value: http://develop-transactions-service
-            - name: TESTDATA_SERVICE_URL
-              value: http://develop-testdata-service
