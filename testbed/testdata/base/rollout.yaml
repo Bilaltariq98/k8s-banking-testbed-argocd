@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: testdata
+  labels:
+    app: testdata
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testdata-pod
+  strategy:
+    blueGreen:
+      activeService: testdata-service
+      previewService: testdata-service-preview
+  template:
+    metadata:
+      labels:
+        app: testdata-pod
+        project: banking
+    spec:
+      containers:
+        - name: testdata
+          image: bilal690/banking-testdata:0.1.develop
+          ports:
+          - containerPort: 3000
