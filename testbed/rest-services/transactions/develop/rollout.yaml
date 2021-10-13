@@ -5,10 +5,11 @@ metadata:
   labels:
     app: transactions
 spec:
-    blueGreen:
-      activeService: develop-transactions-service
-      previewService: develop-transactions-service-preview
-      autoPromotionEnabled: false
+    strategy:
+      blueGreen:
+        activeService: develop-transactions-service
+        previewService: develop-transactions-service-preview
+        autoPromotionEnabled: false
     template:
       spec:
         containers:
