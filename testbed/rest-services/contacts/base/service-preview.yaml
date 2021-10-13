@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: contacts
-  name: contacts-preview
+  name: contacts-service-preview
 spec:
   ports:
   - port: 80
