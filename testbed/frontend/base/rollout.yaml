@@ -1,5 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: frontend
   labels:
@@ -9,6 +9,11 @@ spec:
     selector:
       matchLabels:
         app: frontend-pod
+    strategy:
+      blueGreen:
+        activeService: frontend-service
+        previewService: frontend-service-preview
+        autoPromotionEnabled: false
     template:
       metadata:
         labels:
