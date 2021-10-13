@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: tests
+  namespace: operations
+  labels:
+    app: tests
+spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: tests-pod
+    strategy:
+      blueGreen:
+        activeService: develop-tests-service
+        previewService: develop-tests-service-preview
+        autoPromotionEnabled: false
+    template:
+      metadata:
+        labels:
+          app: tests-pod
+          project: banking
+      spec:
+        containers:
+        - name: tests
+          image: k3d-banking-registry/banking-tests:local
+          ports:
+          - containerPort: 3000

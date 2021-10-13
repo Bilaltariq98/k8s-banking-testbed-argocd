@@ -13,6 +13,7 @@ spec:
     blueGreen:
       activeService: develop-testdata-service
       previewService: develop-testdata-service-preview
+      autoPromotionEnabled: false
   template:
     metadata:
       labels:
