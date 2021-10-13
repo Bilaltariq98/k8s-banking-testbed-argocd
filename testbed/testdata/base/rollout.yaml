@@ -11,8 +11,8 @@ spec:
       app: testdata-pod
   strategy:
     blueGreen:
-      activeService: testdata-service
-      previewService: testdata-service-preview
+      activeService: develop-testdata-service
+      previewService: develop-testdata-service-preview
   template:
     metadata:
       labels:
