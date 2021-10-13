@@ -1,5 +1,5 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Rollout
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: monitoring
   namespace: operations
@@ -10,11 +10,6 @@ spec:
     selector:
       matchLabels:
         app: monitoring-pod
-    strategy:
-      blueGreen:
-        activeService: monitoring-service
-        previewService: monitoring-service-preview
-        autoPromotionEnabled: false
     template:
       metadata:
         labels:
