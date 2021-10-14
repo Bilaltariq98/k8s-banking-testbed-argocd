@@ -13,3 +13,12 @@ spec:
           image: bilal690/banking-tests:0.4.develop
           ports:
           - containerPort: 3000
+          env:
+            - name: FRONTEND_SERVICE_DNS
+              value: develop-frontend-service.develop.svc.cluster.local
+            - name: APP_NAMESPACE
+              value: .develop.svc.cluster.local
+            - name: CONTACTS_SERVICE_URL
+              value: http://develop-contacts-service
+            - name: CUSTOMER_SERVICE_URL
+              value: http://develop-customer-service
