@@ -80,8 +80,9 @@ spec:
         port:
           number: 80
   - match:
-    - uri:
-        prefix: /testdata-preview
+    - headers:
+        preview:
+          exact: 'true'
     route:
     - destination:
         host: develop-testdata-service-preview.develop.svc.cluster.local
