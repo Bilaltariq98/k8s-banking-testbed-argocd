@@ -81,6 +81,14 @@ spec:
           number: 80
   - match:
     - uri:
+        prefix: /testdata-preview
+    route:
+    - destination:
+        host: develop-testdata-service-preview.develop.svc.cluster.local
+        port:
+          number: 80
+  - match:
+    - uri:
         prefix: /grafana
     route:
     - destination:
