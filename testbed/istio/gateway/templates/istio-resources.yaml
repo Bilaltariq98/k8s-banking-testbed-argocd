@@ -72,20 +72,18 @@ spec:
         port:
           number: 80
   - match:
-    - uri:
-        prefix: /testdata
-    route:
-    - destination:
-        host: develop-testdata-service.develop.svc.cluster.local
-        port:
-          number: 80
-  - match:
     - headers:
         preview:
           exact: 'true'
     route:
     - destination:
         host: develop-testdata-service-preview.develop.svc.cluster.local
+  - match:
+    - uri:
+        prefix: /testdata
+    route:
+    - destination:
+        host: develop-testdata-service.develop.svc.cluster.local
         port:
           number: 80
   - match:
