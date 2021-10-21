@@ -18,17 +18,17 @@ You may need to rerun the above command as the Application CRD sometimes throws 
 'no matches for kind "Application" in version "argoproj.io/v1alpha1"'
 
 3. Run the following commands to get Argo Rollouts setup properly 
-
+'
 kubectl delete deployment argo-rollouts -n argocd 
 kubectl create namespace argo-rollouts
 kubectl apply -n argo-rollouts -f https://github.com/argoproj/argo-rollouts/releases/latest/download/install.yaml
-
+'
 4. Apply the 3 .yaml files to kubectl located here - https://github.com/Bilaltariq98/k8s-banking-testbed/tree/main/istio
-
+'
 kubectl apply -k k8s-banking-testbed/istio/kiali.yaml
 kubectl apply -k k8s-banking-testbed/istio/grafana.yaml
 kubectl apply -k k8s-banking-testbed/istio/prometheus.yaml
-
+'
 
 You may need to rerun the above command as the CRD sometimes throws an error.
 
