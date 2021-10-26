@@ -9,6 +9,6 @@ spec:
     spec:
       containers:
         - name: testdata
-          image: ${REGISTRY}/${REPOSITORY}:${IMAGE_TAG}
+          image: bilal690/banking-testdata:0.0.3.develop
           ports:
             - containerPort: 3000
