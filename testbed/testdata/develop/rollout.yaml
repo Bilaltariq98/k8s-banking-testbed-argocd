@@ -11,4 +11,4 @@ spec:
         - name: testdata
           image: bilal690/banking-testdata:0.3.develop
           ports:
-          - containerPort: 3000
+            - containerPort: 3000
