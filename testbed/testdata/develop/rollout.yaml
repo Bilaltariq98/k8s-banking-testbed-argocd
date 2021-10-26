@@ -9,6 +9,6 @@ spec:
     spec:
       containers:
         - name: testdata
-          image: '/:'
+          image: ${REGISTRY}/${REPOSITORY}:${IMAGE_TAG}
           ports:
             - containerPort: 3000
