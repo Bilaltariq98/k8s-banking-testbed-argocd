@@ -19,7 +19,7 @@ spec:
       serviceAccountName: monitoring-account
       containers:
         - name: monitoring
-          image: bilal690/banking-monitoring:0.0.2.develop
+          image: bilal690/banking-monitoring:0.0.1.develop
           ports:
             - containerPort: 3000
           env:
