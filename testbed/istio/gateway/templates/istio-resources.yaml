@@ -13,7 +13,7 @@ spec:
     hosts:
     - "banking-testbed.com"
     - "banking-testbed-preview.com"
-    - "argocd"
+    - "argo.cd"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -211,7 +211,7 @@ metadata:
   name: argocd
 spec:
   hosts:
-  - "argocd"
+  - "argo.cd"
   gateways:
   - banking-gateway
   http:
