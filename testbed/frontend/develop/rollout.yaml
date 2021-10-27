@@ -5,19 +5,19 @@ metadata:
   labels:
     app: frontend
 spec:
-    strategy:
-      blueGreen:
-        activeService: develop-frontend-service
-        previewService: develop-frontend-service-preview
-        autoPromotionEnabled: false
-    template:
-      metadata:
-        labels:
-          app: frontend-pod
-          project: banking
-      spec:
-        containers:
+  strategy:
+    blueGreen:
+      activeService: develop-frontend-service
+      previewService: develop-frontend-service-preview
+      autoPromotionEnabled: false
+  template:
+    metadata:
+      labels:
+        app: frontend-pod
+        project: banking
+    spec:
+      containers:
         - name: frontend
-          image: bilal690/banking-frontend:0.2.develop
+          image: bilal690/banking-frontend:0.0.1.develop
           ports:
-          - containerPort: 3000
+            - containerPort: 3000
