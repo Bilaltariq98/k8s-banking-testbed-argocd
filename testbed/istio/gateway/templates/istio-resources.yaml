@@ -110,3 +110,30 @@ spec:
         host: develop-frontend-service.develop.svc.cluster.local
         port:
           number: 80
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: banking-preview
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - banking-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /preview/testdata
+    route:
+    - destination:
+        host: develop-testdata-service-preview.develop.svc.cluster.local
+        port:
+          number: 80
+  - match:
+    - uri:
+        prefix: /preview/
+    route:
+    - destination:
+        host: develop-frontend-service-preview.develop.svc.cluster.local
+        port:
+          number: 80
