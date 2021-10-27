@@ -51,3 +51,14 @@ You may need to rerun the above command as the CRD sometimes throws an error.
 5. port forward Argo CD and access it from the port forwarded URL (localhost:8081 in my case) 
 
 >kubectl port-forward svc/argocd-server -n argocd 8081:443
+
+
+6. To access the application do the following
+
+ a) Get the Istio Ingress IP via the following 
+    kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}' 
+
+ b) Update /etc/hosts with the following entries (replace ISTIO_INGRESS_IP with your IP from the above output)
+
+    ISTIO_INGRESS_IP banking-testbed.com
+    ISTIO_INGRESS_IP banking-testbed-preview.com
