@@ -11,7 +11,7 @@ spec:
       name: http2
       protocol: HTTP2
     hosts:
-    - "banking-testbed.com"
+    - "*"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -19,7 +19,7 @@ metadata:
   name: banking
 spec:
   hosts:
-  - "banking-testbed.com"
+  - "*"
   gateways:
   - banking-gateway
   http:
