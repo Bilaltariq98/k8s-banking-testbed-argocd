@@ -79,7 +79,6 @@ spec:
         host: develop-testdata-service-preview.develop.svc.cluster.local
         port:
           number: 80
-        subset: green
   - match:
     - uri:
         prefix: /testdata
@@ -88,7 +87,6 @@ spec:
         host: develop-testdata-service.develop.svc.cluster.local
         port:
           number: 80
-        subset: blue
   - match:
     - uri:
         prefix: /grafana
