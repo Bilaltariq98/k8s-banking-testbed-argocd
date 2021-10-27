@@ -6,13 +6,13 @@ metadata:
   labels:
     app: tests
 spec:
-    template:
-      spec:
-        containers:
+  template:
+    spec:
+      containers:
         - name: tests
-          image: bilal690/banking-tests:0.4.develop
+          image: bilal690/banking-tests:0.0.2.develop
           ports:
-          - containerPort: 3000
+            - containerPort: 3000
           env:
             - name: FRONTEND_SERVICE_DNS
               value: develop-frontend-service.develop.svc.cluster.local
