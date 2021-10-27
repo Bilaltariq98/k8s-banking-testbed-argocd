@@ -10,5 +10,5 @@ spec:
     targetPort: 3000
     appProtocol: http
   selector:
-    app: testdata-pod-preview
+    app: testdata-pod
   type: ClusterIP
