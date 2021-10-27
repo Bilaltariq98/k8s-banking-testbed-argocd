@@ -72,12 +72,13 @@ spec:
         port:
           number: 80
   - match:
-    - headers:
-        preview:
-          exact: 'true'
+    - uri:
+        prefix: /preview/testdata
     route:
     - destination:
         host: develop-testdata-service-preview.develop.svc.cluster.local
+        port:
+          number: 80
   - match:
     - uri:
         prefix: /testdata
@@ -102,6 +103,14 @@ spec:
         host: kiali.istio-system.svc.cluster.local
         port:
           number: 20001
+  - match:
+    - uri:
+        prefix: /preview/
+    route:
+    - destination:
+        host: develop-frontend-service-preview.develop.svc.cluster.local
+        port:
+          number: 80
   - match:
     - uri:
         prefix: /
