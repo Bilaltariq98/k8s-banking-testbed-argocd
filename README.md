@@ -42,9 +42,6 @@ You may need to rerun the above command as the CRD sometimes throws an error.
 
 > kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 
-5. port forward Argo CD and access it from the port forwarded URL (localhost:8081 in my case)
-
-> kubectl port-forward svc/argocd-server -n argocd 8081:443
 
 6. To access the testbed application:
 
@@ -54,7 +51,10 @@ a.) Get the Istio Ingress IP via the following
 
 b.) Update /etc/hosts with the following entries (replace ISTIO_INGRESS_IP with your IP from the above output)
 
-> ISTIO_INGRESS_IP banking-testbed.com
-> ISTIO_INGRESS_IP banking-testbed-preview.com
+> ISTIO_INGRESS_IP banking-testbed.com banking-testbed-preview.com argo.cd
 
 Access the testbed application by accessing http://banking-testbed.com
+
+Access the preview (green) instance of the application during code promotion via http://banking-testbed-preview.com
+
+Access argo cd by accessing http://argo.cd
