@@ -103,13 +103,6 @@ spec:
         port:
           number: 20001
   - match:
-    - headers:
-        preview:
-          exact: 'true'
-    route:
-    - destination:
-        host: develop-frontend-service-preview.develop.svc.cluster.local
-  - match:
     - uri:
         prefix: /
     route:
