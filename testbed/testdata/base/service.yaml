@@ -3,6 +3,7 @@ kind: Service
 metadata:
   labels:
     app: testdata
+    version: blue
   name: testdata-service
 spec:
   ports:
