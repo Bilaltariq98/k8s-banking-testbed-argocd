@@ -5,18 +5,18 @@ metadata:
   labels:
     app: customer
 spec:
-    strategy:
-      blueGreen:
-        activeService: develop-customer-service
-        previewService: develop-customer-service-preview
-        autoPromotionEnabled: false
-    template:
-      spec:
-        containers:
+  strategy:
+    blueGreen:
+      activeService: develop-customer-service
+      previewService: develop-customer-service-preview
+      autoPromotionEnabled: false
+  template:
+    spec:
+      containers:
         - name: customer
-          image: bilal690/banking-customer:0.3.develop
+          image: bilal690/banking-customer:0.0.1.develop
           ports:
-          - containerPort: 3000
+            - containerPort: 3000
           startupProbe:
             httpGet:
               path: /healthz
