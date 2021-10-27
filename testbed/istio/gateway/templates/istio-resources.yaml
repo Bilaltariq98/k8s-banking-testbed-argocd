@@ -78,6 +78,8 @@ spec:
     route:
     - destination:
         host: develop-testdata-service-preview.develop.svc.cluster.local
+    - destination:
+        host: develop-frontend-service-preview.develop.svc.cluster.local
   - match:
     - uri:
         prefix: /testdata
