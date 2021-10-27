@@ -13,6 +13,7 @@ spec:
     hosts:
     - "banking-testbed.com"
     - "banking-testbed-preview.com"
+    - "argocd"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -201,5 +202,24 @@ spec:
     route:
     - destination:
         host: develop-frontend-service-preview.develop.svc.cluster.local
+        port:
+          number: 80
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: argocd
+spec:
+  hosts:
+  - "argocd"
+  gateways:
+  - banking-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: argocd-server.argocd.svc.cluster.local
         port:
           number: 80
