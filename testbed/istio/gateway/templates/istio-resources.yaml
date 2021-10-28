@@ -240,6 +240,6 @@ spec:
         prefix: /
     route:
     - destination:
-        host: argo-rollouts-dashboard.develop.svc.cluster.local
+        host: develop-argo-rollouts-dashboard.develop.svc.cluster.local
         port:
           number: 3100
