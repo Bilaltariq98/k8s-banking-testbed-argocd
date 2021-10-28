@@ -1,0 +1,4 @@
+subjects:
+- kind: ServiceAccount
+  name: argo-rollouts-dashboard
+  namespace: develop

@@ -1,0 +1,6 @@
+resources:
+- ./../base
+namePrefix: develop-
+patches:
+- rolebinding.yaml
+namespace: develop

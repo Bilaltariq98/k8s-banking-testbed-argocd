@@ -1,0 +1,8 @@
+resources:
+- role.yaml
+- rolebinding.yaml
+- https://raw.githubusercontent.com/argoproj/argo-rollouts/master/manifests/dashboard-install/dashboard-deployment.yaml
+- https://raw.githubusercontent.com/argoproj/argo-rollouts/master/manifests/dashboard-install/dashboard-service.yaml
+- https://raw.githubusercontent.com/argoproj/argo-rollouts/master/manifests/dashboard-install/dashboard-serviceaccount.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
