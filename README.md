@@ -58,3 +58,20 @@ Access the testbed application by accessing http://banking-testbed.com
 Access the preview (green) instance of the application during code promotion via http://banking-testbed-preview.com
 
 Access argo cd by accessing http://argo.cd
+
+# Kafka Setup 
+
+Setup a Kafka operator namespace 
+
+> kubectl create ns kafka-operator
+
+Add Strimzi Helm Repository and update local index
+ 
+> helm repo add strimzi https://strimzi.io/charts/ 
+> helm repo update 
+
+Install Strimzi to kafka-operator namespace
+
+> helm install strimzi strimzi/strimzi-kafka-operator --namespace kafka-operator
+
+Sync the kafka applications inside the Argo CD UI (cluster / topics) 
