@@ -33,4 +33,4 @@ spec:
             - name: KAFKA_TOPIC_NAME
               value: customer
             - name: BROKER_URL
-              value: http://kafka-cluster-kafka-bootstrap:9092
+              value: 172.20.0.2:32248
