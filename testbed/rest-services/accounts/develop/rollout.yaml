@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: accounts
-          image: bilal690/banking-accounts:0.0.3.develop
+          image: bilal690/banking-accounts:0.0.4.develop
           ports:
             - containerPort: 3000
           startupProbe:
