@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: contacts
-          image: bilal690/banking-contacts:0.0.6.develop
+          image: bilal690/banking-contacts:0.0.7.develop
           ports:
             - containerPort: 3000
           startupProbe:
