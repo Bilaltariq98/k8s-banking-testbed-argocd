@@ -1,7 +1,44 @@
+---
 apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaTopic
 metadata:
-  name: kafka-topic
+  name: accounts
+  labels:
+    strimzi.io/cluster: "kafka-cluster"
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  partitions: 3
+  replicas: 1
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: contacts
+  labels:
+    strimzi.io/cluster: "kafka-cluster"
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  partitions: 3
+  replicas: 1
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: customer
+  labels:
+    strimzi.io/cluster: "kafka-cluster"
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  partitions: 3
+  replicas: 1
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: transactions
   labels:
     strimzi.io/cluster: "kafka-cluster"
   annotations:

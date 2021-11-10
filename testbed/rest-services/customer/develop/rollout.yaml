@@ -30,3 +30,7 @@ spec:
               value: http://develop-contacts-service
             - name: TESTDATA_SERVICE_URL
               value: http://develop-testdata-service
+            - name: KAFKA_TOPIC_NAME
+              value: customer
+            - name: BROKER_URL
+              value: http://kafka-cluster-kafka-bootstrap:9092

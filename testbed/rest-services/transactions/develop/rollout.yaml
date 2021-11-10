@@ -28,3 +28,7 @@ spec:
               value: http://develop-accounts-service
             - name: TESTDATA_SERVICE_URL
               value: http://develop-testdata-service
+            - name: KAFKA_TOPIC_NAME
+              value: transactions
+            - name: BROKER_URL
+              value: http://kafka-cluster-kafka-bootstrap:9092
