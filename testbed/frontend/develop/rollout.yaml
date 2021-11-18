@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: bilal690/banking-frontend:0.0.4.develop
+          image: bilal690/banking-frontend:0.0.5.develop
           ports:
             - containerPort: 3000
