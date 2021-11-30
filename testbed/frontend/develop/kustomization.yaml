@@ -9,4 +9,4 @@ kind: Kustomization
 images:
 - name: bilal690/banking-frontend:0.0.5.develop
   newName: bilal690/banking-frontend
-  newTag: 0.0.4.develop
+  newTag: 0.0.5.develop
