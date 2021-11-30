@@ -4,3 +4,9 @@ namePrefix: develop-
 patches:
 - rollout.yaml
 namespace: develop
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: bilal690/banking-frontend:0.0.5.develop
+  newName: bilal690/banking-frontend
+  newTag: 0.0.4.develop
